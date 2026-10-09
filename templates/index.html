@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pass Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="/">EduPredict<span>.</span></a>
+        <span class="nav-label">STUDENT ANALYTICS</span>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <p class="eyebrow">MACHINE LEARNING PROJECT</p>
+            <h1>Predict student <span>success.</span></h1>
+            <p class="subtitle">
+                Enter academic details to estimate whether a student
+                is likely to pass or fail using a trained ML model.
+            </p>
+        </section>
+
+        <section class="dashboard">
+            <div class="form-card">
+                <div class="card-heading">
+                    <div>
+                        <p class="eyebrow">STUDENT DETAILS</p>
+                        <h2>Academic information</h2>
+                    </div>
+                    <div class="icon-box">✎</div>
+                </div>
+
+                <form id="predictionForm">
+                    <div class="field">
+                        <label for="studyHours">Daily study hours</label>
+                        <input id="studyHours" type="number"
+                               min="0" max="24" step="0.5"
+                               placeholder="e.g. 6" required>
+                        <small>Average hours studied per day</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="attendance">Attendance (%)</label>
+                        <input id="attendance" type="number"
+                               min="0" max="100" step="0.1"
+                               placeholder="e.g. 80" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="previousMarks">Previous marks (out of 100)</label>
+                        <input id="previousMarks" type="number"
+                               min="0" max="100" step="0.1"
+                               placeholder="e.g. 70" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="assignments">Assignments completed (out of 10)</label>
+                        <input id="assignments" type="number"
+                               min="0" max="10" step="1"
+                               placeholder="e.g. 8" required>
+                    </div>
+
+                    <button id="predictButton" type="submit">
+                        Predict student result <span>→</span>
+                    </button>
+                    <p class="form-note">
+                        All fields are required. Enter accurate values.
+                    </p>
+                </form>
+            </div>
+
+            <aside class="result-card" aria-live="polite">
+                <div class="result-top">
+                    <span class="result-icon">✦</span>
+                    <span class="status">ML PREDICTION</span>
+                </div>
+
+                <div id="resultContent" class="result-content">
+                    <div class="empty-illustration">◎</div>
+                    <h2>Your result appears here</h2>
+                    <p>
+                        Complete the academic information and select
+                        the prediction button to view the model's output.
+                    </p>
+                </div>
+
+                <div class="result-footer">
+                    <span class="footer-dot"></span>
+                    Powered by Logistic Regression
+                </div>
+            </aside>
+        </section>
+
+        <section class="info-grid">
+            <article class="info-card">
+                <span>01 / INPUT</span>
+                <h3>Student data</h3>
+                <p>Four academic features are provided to the model.</p>
+            </article>
+            <article class="info-card">
+                <span>02 / PROCESS</span>
+                <h3>ML analysis</h3>
+                <p>The trained model identifies patterns in historical records.</p>
+            </article>
+            <article class="info-card">
+                <span>03 / OUTPUT</span>
+                <h3>Prediction</h3>
+                <p>The model estimates a Pass or Fail outcome.</p>
+            </article>
+        </section>
+
+        <p class="disclaimer">
+            This prediction is an estimate, not a guarantee of actual academic
+            performance. Model quality depends on the training data.
+        </p>
+    </main>
+
+    <footer>
+        Student Pass Prediction System · Machine Learning Project
+    </footer>
+</body>
+</html>
